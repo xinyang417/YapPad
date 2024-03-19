@@ -1,4 +1,6 @@
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -7,24 +9,23 @@ html, body, #root {
   background-color: #1d1d1d;
 }
 
-
 .login-container {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
-  width: 100%; 
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
 }
 
 .logo-container {
-  text-align: center; 
-  margin-bottom: 20px; 
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .login-logo {
-  max-width: 150px; 
+  max-width: 150px;
   height: auto;
-  border-radius: 40px; 
+  border-radius: 40px;
 }
 
 .login-form {
@@ -33,7 +34,7 @@ html, body, #root {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 40px;
   max-width: 400px;
-  width: 100%; 
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,6 +79,24 @@ h2 {
 
 .login-button:hover {
   background-color: #ff2600;
+  color: #fff;
+}
+
+.signup-redirect {
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #656565;
+  color: rgb(255, 255, 255);
+  border: 2px solid #393939;
+  border-radius: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-redirect:hover {
+  background-color: #ff6c52;
   color: #fff;
 }
 

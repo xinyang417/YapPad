@@ -40,6 +40,7 @@ function LoginPage() {
           />
         </div>
         <button type="submit" className="login-button">Login</button>
+        <button to="/signup" className="signup-redirect">I don't have an account</button>
       </form>
     </div>
   );
