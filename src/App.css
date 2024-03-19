@@ -1,42 +1,135 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: center;
+  height: 100vh;
+  padding-left: 150px; 
+}
+
+.logo-container {
+  margin-bottom: 10px; 
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  max-width: 150px; 
+  height: auto;
+  border-radius: 40px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  font-size: 2.5em;
+  color: white;
+  text-align: center;
+}
+
+
+.button-container {
+  display: flex;
+  margin-top: 20px; 
+  text-align: center;
+  justify-content: center;
+}
+
+
+.button {
+  background-color: #ffedea; 
+  color: rgb(0, 0, 0);
+  border: 2px solid #ff2600; 
+  border-radius: 40px; 
+  padding: 10px 20px; 
+  cursor: pointer;
+  font-size: 16px; 
+  transition: background-color 0.3s; 
+  margin: 10px;
+}
+
+.button:hover {
+  background-color: #ff2600; 
+  color: #fff; 
+}
+
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.content-container {
+  padding-left: 150px; 
+  max-width: 600px; 
+  justify-content: center;
+  text-align: center;
+}
+
+.image-container {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 40px; 
+  order: 2;
+}
+
+.right-image {
+  max-width: 800px; 
+  height: auto;
+  border-radius: 80px;
+}
+
+
+
+@media (max-width: 968px) {
+  .app {
+    flex-direction: column; 
+    align-items: center; 
+    padding-left: 0; 
   }
-  to {
-    transform: rotate(360deg);
+
+  .image-container {
+    justify-content: center; 
+    padding: 0; 
+    width: 100%; 
+  }
+
+  .right-image {
+    max-width: 80%; 
+    max-height: unset; 
+  }
+
+  .button-container {
+    flex-direction: column; 
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+
+
+@media (max-width: 500px) {
+  .app {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0; 
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .button-container {
+    order: 2;
+    flex-direction: column;
+  }
 
-.read-the-docs {
-  color: #888;
+  .image-container {
+    margin-top: 700px;
+    margin-right: 200px;
+    order: 3;
+    padding: 0;
+  }
+
 }
