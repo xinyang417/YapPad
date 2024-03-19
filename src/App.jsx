@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-route
 import './App.css';
 import logo from './assets/images/logo.png';
 import rightImage from './assets/images/rightImage.jpeg';
-import LoginPage from './components/LoginPage'; // Adjust the import path as needed
+import LoginPage from './components/LoginPage';
+import SignupPage from './components/SignupPage';
 
 function HomePage() {
   let navigate = useNavigate();
@@ -11,6 +12,10 @@ function HomePage() {
   const handleLoginClick = () => {
     navigate('/login');
   };
+
+  const handleSignupClick = () => {
+    navigate('/signup');
+  }
 
   return (
     <div className="main-container">
@@ -21,7 +26,7 @@ function HomePage() {
         <h1>Welcome to YapPad</h1>
         <div className="button-container">
           <button className="button" onClick={handleLoginClick}>Login</button>
-          <button className="button">Sign Up</button>
+          <button className="button" onClick={handleSignupClick}>Sign Up</button>
         </div>
       </div>
       <div className="image-container">
@@ -34,10 +39,14 @@ function HomePage() {
 function App() {
   return (
     <Router>
+      {/* TODO Add Navbar */}
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
+      {/* TODO Add Footer */}
+      {/* TODO Add Bottombar */}
     </Router>
   );
 }
