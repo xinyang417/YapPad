@@ -6,18 +6,18 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 
 function App() {
-  return (
-    <Router>
-      {/* TODO: Add Navbar */}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-      </Routes>
-      {/* TODO: Add Footer */}
-      {/* TODO: Add Bottombar */}
-    </Router>
-  );
+    return (
+        <Router>
+            {/* TODO: Add Navbar */}
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+            </Routes>
+            {/* TODO: Add Footer */}
+            {/* TODO: Add Bottombar */}
+        </Router>
+    );
 }
 
 export default App;
