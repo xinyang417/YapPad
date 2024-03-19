@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../style/LoginPage.css'; 
+import '../style/LoginPage.css';
 import logo from '../assets/images/logo.png';
 
 function LoginPage() {
@@ -9,6 +9,7 @@ function LoginPage() {
   const handleLogin = (event) => {
     event.preventDefault();
     console.log("Login attempt with:", username, password);
+    // Login logic here
   };
 
   return (
