@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import rightImage from '../assets/images/rightImage.jpeg';
 import '../style/HomePage.css';
+import '../App.css';
 
 function HomePage() {
   let navigate = useNavigate();
@@ -21,7 +22,7 @@ function HomePage() {
         <div className="logo-container">
           <img src={logo} alt="Logo" className="logo" />
         </div>
-        <h1>Welcome to YapPad</h1>
+        <h1 className="logo">Welcome to YapPad</h1>
         <div className="button-container">
           <button className="button" onClick={handleLoginClick}>Login</button>
           <button className="button" onClick={handleSignupClick}>Sign Up</button>
