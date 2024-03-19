@@ -1,9 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
-import logo from './assets/images/logo.png'; 
-import rightImage from './assets/images/rightImage.jpeg'; 
+import logo from './assets/images/logo.png';
+import rightImage from './assets/images/rightImage.jpeg';
+import LoginPage from './components/LoginPage'; // Adjust the import path as needed
 
-function App() {
+function HomePage() {
+  let navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="main-container">
       <div className="content-container">
@@ -12,7 +20,7 @@ function App() {
         </div>
         <h1>Welcome to YapPad</h1>
         <div className="button-container">
-          <button className="button">Login</button>
+          <button className="button" onClick={handleLoginClick}>Login</button>
           <button className="button">Sign Up</button>
         </div>
       </div>
@@ -20,6 +28,17 @@ function App() {
         <img src={rightImage} alt="Decorative" className="right-image" />
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 
