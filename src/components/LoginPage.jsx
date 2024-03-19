@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../style/LoginPage.css';
 import logo from '../assets/images/logo.png';
 
@@ -40,7 +41,8 @@ function LoginPage() {
                     />
                 </div>
                 <button type="submit" className="login-button">Login</button>
-                <button to="/signup" className="signup-redirect">I don't have an account</button>
+                {/* Use Link for navigation */}
+                <Link to="/signup" className="signup-link">I don't have an account</Link>
             </form>
         </div>
     );

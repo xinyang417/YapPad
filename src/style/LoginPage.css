@@ -95,9 +95,15 @@ h2 {
     transition: background-color 0.3s;
 }
 
-.signup-redirect:hover {
-    background-color: #ff6c52;
-    color: #fff;
+.signup-link {
+    margin-top: 20px;
+    color: #818181;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link:hover {
+    color: #ff2600;
 }
 
 @media (max-width: 500px) {
