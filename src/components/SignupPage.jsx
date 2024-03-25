@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../style/LoginPage.css';
+import '../style/SignupPage.css';
 import '../App.css';
 import logo from '../assets/images/logo.png';
 
-function LoginPage() {
+function SignupPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
 
-    const handleLogin = (event) => {
+    const handleSignup = (event) => {
         event.preventDefault();
-        console.log("Login attempt with:", username, password);
-        // Login logic here
+        console.log("Signup attempt with:", username, password, email);
+        // Signup logic here
     };
 
     return (
-        <div className="login-container">
-            <form onSubmit={handleLogin} className="login-form">
+        <div className="signup-container">
+            <form onSubmit={handleSignup} className="signup-form">
                 <div className="logo-container">
-                    <img src={logo} alt="Logo" className="login-logo" />
+                    <img src={logo} alt="Logo" className="signup-logo" />
                 </div>
-                <h2>Login</h2>
+                <h2>Sign Up</h2>
                 <div className="input-group">
                     <label htmlFor="username">Username</label>
                     <input
@@ -41,11 +42,21 @@ function LoginPage() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <button type="submit" className="login-button">Login</button>
-                <Link to="/signup" className="signup-link">I don't have an account</Link>
+                <div className="input-group">
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <button type="submit" className="signup-button">Sign Up</button>
+                <Link to="/login" className="login-link">I already have an account</Link>
             </form>
         </div>
     );
 }
 
-export default LoginPage;
+export default SignupPage;

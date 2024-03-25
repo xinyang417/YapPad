@@ -9,7 +9,7 @@ body,
     background-color: #1d1d1d;
 }
 
-.login-container {
+.signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,13 +22,13 @@ body,
     margin-bottom: 20px;
 }
 
-.login-logo {
+.signup-logo {
     max-width: 150px;
     height: auto;
     border-radius: 40px;
 }
 
-.login-form {
+.signup-form {
     padding: 40px;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -65,7 +65,7 @@ h2 {
     box-sizing: border-box;
 }
 
-.login-button {
+.signup-button {
     width: 100%;
     padding: 10px 20px;
     background-color: #ffedea;
@@ -77,37 +77,24 @@ h2 {
     transition: background-color 0.3s;
 }
 
-.login-button:hover {
+.signup-button:hover {
     background-color: #ff2600;
     color: #fff;
 }
 
-.signup-redirect {
-    width: 100%;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #656565;
-    color: rgb(255, 255, 255);
-    border: 2px solid #393939;
-    border-radius: 40px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.signup-link {
+.login-link {
     margin-top: 20px;
     color: #818181;
     text-decoration: none;
     font-weight: bold;
 }
 
-.signup-link:hover {
+.login-link:hover {
     color: #ff2600;
 }
 
 @media (max-width: 500px) {
-    .login-form {
+    .signup-form {
         padding: 20px;
         border-radius: 20px;
     }
