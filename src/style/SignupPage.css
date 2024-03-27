@@ -6,10 +6,10 @@ body,
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    background-color: #1d1d1d;
+    background-color:#f4f5f8;
 }
 
-.signup-container {
+.signup-containesr {
     display: flex;
     justify-content: center;
     align-items: center;
