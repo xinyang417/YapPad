@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../style/SignupPage.css';
 import '../App.css';
 import logo from '../assets/images/logo.png';
@@ -9,10 +10,24 @@ function SignupPage() {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
 
-    const handleSignup = (event) => {
+    const handleSignup = async (event) => {
         event.preventDefault();
         console.log("Signup attempt with:", username, password, email);
-        // Signup logic here
+
+        try {
+            // Make a POST request to the backend signup endpoint
+            const response = await axios.post('http://localhost:8000/auth/register', {
+                username: username,
+                email: email,
+                password: password
+            });
+
+            // Handle successful signup
+            console.log('Signup successful:', response.data);
+        } catch (error) {
+            // Handle signup error
+            console.error('Signup failed:', error.message);
+        }
     };
 
     return (
