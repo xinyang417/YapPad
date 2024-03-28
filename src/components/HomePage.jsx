@@ -1,5 +1,8 @@
+// Backend Imports
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
+// Frontend Imports
 import logo from '../assets/images/logo.png';
 import rightImage from '../assets/images/rightImage.jpeg';
 import '../style/HomePage.css';

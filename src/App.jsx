@@ -1,6 +1,11 @@
+// Backend Imports
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+// Frontend Imports
 import './App.css';
+
+// Routing Imports
 import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
