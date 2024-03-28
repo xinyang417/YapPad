@@ -1,17 +1,37 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../style/LoginPage.css';
 import '../App.css';
 import logo from '../assets/images/logo.png';
 
 function LoginPage() {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
-        console.log("Login attempt with:", username, password);
-        // Login logic here
+        try {
+            const response = await axios.post('http://localhost:8000/auth/login', {
+                email: email,
+                password: password
+            });
+            console.log('Login successful: ', email);
+        } catch (error) {
+            console.error('Login failed:', error.response || error.request || error.message);
+            if (error.response) {
+                if (error.response.status === 401) {
+                    setErrorMessage('Invalid email or password');
+                } else {
+                    setErrorMessage('An unexpected error occurred. Please try again later.');
+                }
+            } else if (error.request) {
+                setErrorMessage('Request was made, but no response from the server. Please check your internet connection.');
+            } else {
+                setErrorMessage('Something else happened in making the request... An unexpected error occurred. Please try again later.');
+            }
+        }
     };
 
     return (
@@ -22,13 +42,14 @@ function LoginPage() {
                 </div>
                 <h2>Login</h2>
                 <div className="input-group">
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="email">Email</label>
                     <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        autoComplete="username"
                     />
                 </div>
                 <div className="input-group">
@@ -39,8 +60,10 @@ function LoginPage() {
                         name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        autoComplete="current-password"
                     />
                 </div>
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
                 <button type="submit" className="login-button">Login</button>
                 <Link to="/signup" className="signup-link">I don't have an account</Link>
             </form>
